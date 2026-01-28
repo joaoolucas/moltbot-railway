@@ -14,5 +14,11 @@ echo "===================="
 mkdir -p "${CLAWDBOT_STATE_DIR:-/data/.clawdbot}"
 mkdir -p "${CLAWDBOT_WORKSPACE_DIR:-/data/workspace}"
 
+echo "Testing node..."
+node --version
+
+echo "Testing dist/index.js exists..."
+ls -la dist/index.js
+
 echo "Starting gateway..."
-exec node dist/index.js gateway --allow-unconfigured --port "${PORT:-8080}" --bind lan
+node dist/index.js gateway --allow-unconfigured --port "${PORT:-8080}" --bind lan 2>&1
