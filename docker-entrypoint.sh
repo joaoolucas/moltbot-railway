@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+# Force rebuild v2
 echo "=== Railway Debug ==="
 echo "PORT: $PORT"
 echo "PWD: $(pwd)"
